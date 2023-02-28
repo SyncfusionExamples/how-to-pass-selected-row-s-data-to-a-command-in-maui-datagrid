@@ -1,4 +1,4 @@
-# how-to-pass-selected-row-s-data-to-a-command-in-maui-datagrid
+# How to pass Selected Row's data to a command in MAUI DataGrid
 In.NET [MAUI DataGrid](https://www.syncfusion.com/maui-controls/maui-datagrid) (SfDataGrid) provides two events for selection [SelectionChanging](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.DataGrid.SfDataGrid.html#Syncfusion_Maui_DataGrid_SfDataGrid_SelectionChanging) and [SelectionChanged](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.DataGrid.SfDataGrid.html#Syncfusion_Maui_DataGrid_SfDataGrid_SelectionChanged). It provides the added items and the removed items as arguments in it. You can pass the selected row info to a command in the ViewModel.
 
 Refer the below code example in which a custom behavior for passing the selected row information to ViewModel is defined.
