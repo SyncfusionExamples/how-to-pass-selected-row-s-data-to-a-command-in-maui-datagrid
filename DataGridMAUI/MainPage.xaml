@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"             
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+              xmlns:local="clr-namespace:DataGridMAUI"
+             x:Class="DataGridMAUI.MainPage">
+
+
+    <ContentPage.BindingContext>
+        <local:ViewModel x:Name="viewModel" />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:CustomConverter x:Key="gridSelectionChangedEventArgs" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <syncfusion:SfDataGrid x:Name="dataGrid"
+                     SelectionMode="Single"
+                     ItemsSource="{Binding OrderInfo}">
+        <syncfusion:SfDataGrid.Behaviors>
+            <local:CustomBehavior Command="{Binding SelectionCommand}"
+                            Converter="{StaticResource gridSelectionChangedEventArgs}" />
+        </syncfusion:SfDataGrid.Behaviors>
+        <syncfusion:SfDataGrid.Columns>
+            <syncfusion:DataGridNumericColumn MappingName="OrderID" HeaderText="Order ID" Format="d"/>
+            <syncfusion:DataGridTextColumn MappingName="EmployeeID" HeaderText="Employee ID"/>
+            <syncfusion:DataGridTextColumn MappingName="CustomerID" HeaderText="Customer ID"/>
+            <syncfusion:DataGridTextColumn MappingName="FirstName" HeaderText="First Name"/>
+            <syncfusion:DataGridTextColumn MappingName="LastName" HeaderText="Last Name"/>
+        </syncfusion:SfDataGrid.Columns>
+    </syncfusion:SfDataGrid>
+
+</ContentPage>
